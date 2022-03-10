@@ -3,12 +3,10 @@ package exercises
 class Es3 {
 
   // punto A
-  val parity: Int => String =
-    (x: Int) => if (x % 2 == 0) {
-      "even"
-    } else {
-      "odd"
-    }
+
+  val parity: Int => String = _ % 2 match
+    case 0 => "even"
+    case _ => "odd"
 
   def par(x: Int): String = x % 2 match
     case 0 => "even"
