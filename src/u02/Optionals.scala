@@ -20,10 +20,14 @@ object Optionals extends App:
       case Some(a) => f(a)
       case _ => None()
 
-    def filter[A](opt: Option[A])(f: A => Boolean): Option[A] = opt match {
+    def filter[A](opt: Option[A])(f: A => Boolean): Option[A] = opt match
       case Some(a) if f(a) => Some(a)
       case _ => None()
-    }
+
+    def map[A](opt: Option[A])(f: A => Boolean): Option[Boolean] = opt match
+      case Some(a) if f(a) => Some(true)
+      case Some(a) if !f(a) => Some(false)
+      case _ => None()
 
   import Option.*
   val s1: Option[Int] = Some(1)
