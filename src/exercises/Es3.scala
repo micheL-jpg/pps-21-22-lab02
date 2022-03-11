@@ -1,6 +1,6 @@
 package exercises
 
-class Es3 {
+object Es3:
 
   // punto A
 
@@ -13,11 +13,9 @@ class Es3 {
     case _ => "odd"
 
   // punto B
-  val neg: (String => Boolean) => (String => Boolean) = f => (i => !f(i))
+  val neg: (String => Boolean) => String => Boolean = f => i => !f(i)
 
   def neg(f: String => Boolean): String => Boolean = i => !f(i)
 
   // punto C 
   def genericNeg[X](f: X => Boolean): X => Boolean = i => !f(i)
-
-}

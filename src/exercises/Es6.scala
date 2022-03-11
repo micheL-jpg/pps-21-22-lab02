@@ -2,7 +2,7 @@ package exercises
 
 import scala.annotation.tailrec
 
-class Es6 {
+object Es6:
 
   def fib(n: Int): Int = n match
     case 0 => 0
@@ -18,5 +18,3 @@ class Es6 {
       case _ => _fib(n-1,acc2,acc1 + acc2)
 
     _fib(num, 0, 1)
-
-}
