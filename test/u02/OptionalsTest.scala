@@ -6,9 +6,9 @@ import Optionals.Option.*
 
 class OptionalsTest {
 
-  @BeforeEach def setUp(): Unit =
-    val optInt = Some(5)
-    val optNone = None()
+//  @BeforeEach def setUp(): Unit =
+//    val optInt = Some(5)
+//    val optNone = None()
 
   @Test def testFilter(): Unit =
     assertEquals(Some(5), filter(Some(5))(_ > 2))
@@ -19,4 +19,11 @@ class OptionalsTest {
     assertEquals(Some(true), map(Some(5))(_ > 2))
     assertEquals(Some(false), map(Some(5))(_ > 8))
     assertEquals(None(), map(None[Int]())(_ > 2))
+
+  @Test def testMap2(): Unit =
+    assertEquals(Some(Tuple2(5, true)), map2(Some(5))(Some(true)))
+    assertEquals(None(), map2(Some(5))(None()))
+    assertEquals(None(), map2(None[Int]())(Some(5)))
+    assertEquals(None(), map2(None())(None()))
+
 }
