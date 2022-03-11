@@ -2,7 +2,7 @@ package exercises
 
 import scala.math.{Pi, pow}
 
-object Es7 {
+object Es7:
 
   enum Shape:
     case Rectangle(base: Double, height: Double)
@@ -19,4 +19,3 @@ object Es7 {
       case Rectangle(base, height) => base * height
       case Circle(radius) => Pi * pow(radius, 2)
       case Square(side) => pow(side, 2)
-}
